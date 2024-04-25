@@ -1,0 +1,39 @@
+EXP 2
+Use db: use student
+display db: show dbs
+Create collections: db.createCollection("stud")
+display collection: show collections
+
+EXP 3
+Insert: db.stud.insert({name:"AAA"})
+Insert One: db.stud.insertOne({_id:1,name:"BBB",phno:1234})
+Insert Many: db.stud.insertMany([{name:"CCC"},{name:"DDD"},{name:"EEE"}])
+
+Update: db.stud.update({name:"DDD",{$set:{name:"EEE"}})
+Update One: db.stud.updateOne({name:"DDD",{$set:{name:"EEE"}})
+Update Many: db.stud.updateMany{{name:"EEE",{$set:{name:"FFF"}})
+
+EXP 4
+Prints all the rows: db.stud.find()
+Prints all in formatted way: db.stud.find().pretty()
+Prints the specific row: db.stud.findOne({name:BBB})
+
+AND operation: db.stud.find($and[{name:"BBB"},{phno:1234}])
+OR operation: db.stud.find($or[{name:"BBB"},{phno:1234}])
+
+EXP 5
+Limit: db.stud.find({name:"EEE"}).limit(1)
+Skip: db.stud.find({name:"EEE"}).skip(1)
+Sorting in ascending: db.stud.find().sort({name:1})
+Sorting in decending: db.stud.find().sort({name:-1})
+
+EXP 6
+
+
+EXP 8
+import seaborn as sns
+import pandas as pd
+import matplotlib.pyplot as plt
+iris= pd.read.csv('/content/iris.csv')
+sns.heatmap(iris.col(numeric_only=True),annote=True,cmap=''Summer')
+plt.show()
